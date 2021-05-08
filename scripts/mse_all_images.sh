@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in *.png; do python3 scalar_cat_encoder.py $i "binCats/$i.bin"; python3 scalar_cat_decoder.py "binCats/$i.bin" "newCats/$i-new.png"; python3 mse.py $i "newCats/$i-new.png" >> output.txt; done
